@@ -1,4 +1,9 @@
 import './WeatherForecast.css'
+import WeatherIcon from './WeatherIcon'
+import {WeatherDay, WeatherData} from './WeatherData'
+// import WeatherDay from './WeatherDay'
+
+
 
 function WeatherForecasts(props){
     let {day, img, imgAlt, conditions, time} = props
@@ -6,14 +11,15 @@ function WeatherForecasts(props){
     return (
         <>
             <div className="weather">
-                <h2>{day}</h2>
-                <img src={img} alt={imgAlt} />
-                <p><span>conditions: </span>{conditions}</p>
-                <p><span>time: </span>{time}</p>
+                <WeatherDay day={day} />
+                <WeatherIcon img={img} imgAlt={imgAlt} />
+                <WeatherData conditions={conditions} time={time} />
             </div>
 
         </>
     )
 }
+
+
 
 export default WeatherForecasts
